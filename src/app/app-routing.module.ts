@@ -16,7 +16,8 @@ const routes: Routes = [
     {path: 'plumbers' , component: PlumbersComponent},
     {path: 'electricians' , component: ElectriciansComponent},
     {path: 'painters' , component: PaintersComponent},
-    {path: 'masons' , component: MasonsComponent}
+    {path: 'masons' , component: MasonsComponent},
+    {path: 'services/plumbers', redirectTo: '/services/plumber'}
 
 
   ]},
