@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ElectriciansComponent } from './jobs/electricians/electricians.component';
-import { MasonsComponent } from './jobs/masons/masons.component';
-import { PaintersComponent } from './jobs/painters/painters.component';
-import { PlumbersComponent } from './jobs/plumbers/plumbers.component';
-import { PostsComponent } from './posts/posts.component';
-import { QuotationsComponent } from './quotations/quotations.component';
-import { ServsComponent } from './servs/servs.component';
+import { HomeComponent } from './client/home/home.component';
+import { ElectriciansComponent } from './client/jobs/electricians/electricians.component';
+import { MasonsComponent } from './client/jobs/masons/masons.component';
+import { PaintersComponent } from './client/jobs/painters/painters.component';
+import { PlumbersComponent } from './client/jobs/plumbers/plumbers.component';
+import { PostsComponent } from './client/posts/posts.component';
+import { QuotationsComponent } from './client/quotations/quotations.component';
+import { ServsComponent } from './client/servs/servs.component';
+import { ActiveComponent } from './client/tabs/active/active.component';
+import { HistoryComponent } from './client/tabs/history/history.component';
+import { PendingComponent } from './client/tabs/pending/pending.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,12 +21,14 @@ const routes: Routes = [
     {path: 'electricians' , component: ElectriciansComponent},
     {path: 'painters' , component: PaintersComponent},
     {path: 'masons' , component: MasonsComponent},
-    {path: 'services/plumbers', redirectTo: '/services/plumber'}
-
-
   ]},
   {path: 'quotations', component: QuotationsComponent},
-  {path: 'posts', component: PostsComponent},
+  {path: 'posts', component: PostsComponent,children:[
+    {path: 'active' , component: ActiveComponent},
+    {path: 'pending' , component: PendingComponent},
+    {path: 'history' , component: HistoryComponent},
+
+  ]},
 ];
 
 @NgModule({
