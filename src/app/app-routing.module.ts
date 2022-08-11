@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { HomeComponent } from './client/home/home.component';
 import { ElectriciansComponent } from './client/jobs/electricians/electricians.component';
 import { MasonsComponent } from './client/jobs/masons/masons.component';
@@ -14,8 +16,12 @@ import { PendingComponent } from './client/tabs/pending/pending.component';
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  // {path: '', component: LoginComponent, pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path:'register', component: RegisterComponent},
+
+  
   {path: 'services', component: ServsComponent, children:[
     {path: 'plumbers' , component: PlumbersComponent},
     {path: 'electricians' , component: ElectriciansComponent},

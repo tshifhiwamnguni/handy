@@ -1,4 +1,4 @@
-<h1 class="text-5xl text-center my-5">list of plumbers</h1>
+<h1 class="text-2xl text-center my-5">list of plumbers</h1>
 
 <div class="overflow-x-auto relative">
   <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -14,15 +14,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let item of work; let i = index">
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let item of plumbers; let i = index">
         <th
           scope="row"
           class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white uppercase"
         >
-         {{i}} ezekiel {{item.Name}}
+          {{item.firstname}}
         </th>
-        <td class="py-4 px-6 uppercase">ezekiel@gmail.c9om</td>
-        <td class="py-4 px-6 uppercase">pretoria</td>
+        <td class="py-4 px-6 uppercase">{{item.email}}</td>
+        <td class="py-4 px-6 uppercase">{{item.city}}</td>
 
         <td class="py-4 px-6">
           <label for="my-modal" class="btn modal-button" (click)="set(i)">view</label>
@@ -34,11 +34,11 @@
                 ezekiel
               </h3>
               <p class="py-4">
-                name: {{work[ind].Name}} <br>
-                email: ezekiel@gmail.com <br>
-                spexialization: plumber <br>
-                city: pretoria <br>
-                average rates: R5000.00
+                name: {{plumbers[ind].firstname}} <br>
+                email: {{plumbers[ind].email}}  <br>
+                spexialization: {{plumbers[ind].jobtype}}  <br>
+                city: {{plumbers[ind].city}}  <br>
+                average rates: {{plumbers[ind].avgrate}} 
             
                 
               </p>

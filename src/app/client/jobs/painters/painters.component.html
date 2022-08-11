@@ -1,4 +1,4 @@
-<h1 class="text-5xl text-center my-5">
+<h1 class="text-2xl text-center my-5">
     list of painters
 </h1>
 
@@ -16,28 +16,33 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let item of painters; let i = index">
           <th
             scope="row"
             class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white uppercase"
           >
-            ezekiel
+            {{item.firstname}}
           </th>
-          <td class="py-4 px-6 uppercase">ezekiel@gmail.c9om</td>
-          <td class="py-4 px-6 uppercase">pretoria</td>
+          <td class="py-4 px-6 uppercase">{{item.email}}</td>
+          <td class="py-4 px-6 uppercase">{{item.city}}</td>
   
           <td class="py-4 px-6">
-            <label for="my-modal" class="btn modal-button">view</label>
+            <label for="my-modal" class="btn modal-button" (click)="set(i)">view</label>
           
             <input type="checkbox" id="my-modal" class="modal-toggle" />
             <div class="modal">
               <div class="modal-box">
                 <h3 class="font-bold text-lg">
-                  Congratulations random Internet user!
+                  ezekiel
                 </h3>
                 <p class="py-4">
-                  You've been selected for a chance to get one year of
-                  subscription to use Wikipedia for free!
+                  name: {{painters[ind].firstname}} <br>
+                  email: {{painters[ind].email}}  <br>
+                  spexialization: {{painters[ind].jobtype}}  <br>
+                  city: {{painters[ind].city}}  <br>
+                  average rates: {{painters[ind].avgrate}} 
+              
+                  
                 </p>
                 <div class="modal-action">
                   <label for="my-modal" class="btn">request</label>
