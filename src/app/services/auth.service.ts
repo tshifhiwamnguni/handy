@@ -19,14 +19,14 @@ export class AuthService {
   }
 
   loginUser(users : any): Observable<any> { 
-    return this.http.get(`${baseURL}/loginuser`, users);
+    return this.http.post(`${baseURL}/loginuser`, users);
   }
   registerSp(users : any) {
     return this.http.post(`${baseURL}/registersp/`, users);
   }
 
   loginSp(users : any): Observable<any> { 
-    return this.http.get(`${baseURL}/loginsp`, users);
+    return this.http.post(`${baseURL}/loginsp`, users);
   }
   //vkd
 

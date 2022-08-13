@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { StoreService } from 'src/app/services/store.service';
 
 
 @Component({
@@ -13,13 +14,23 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.type = 'customer'
     this.Form = this.formBuilder.group({
+     
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(40)]],
-    });
+   
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(40),
+        ],
+      ],
+    })
   }
   constructor(private formBuilder: FormBuilder,
     private authenticateService: AuthService,
     private router:Router,
+    private store : StoreService,
     private activeRoute:ActivatedRoute,) { }
 
   
@@ -36,19 +47,20 @@ export class LoginComponent implements OnInit {
     return this.Form.controls;
   }
   onSubmit(): void {
-    console.log("ues");
+   
     this.submitted = true;
 
     if(this.type=='handyman'){
       let sp = {
-       
         email: this.Form.value.email,
- 
         password: this.Form.value.password,
       };
       console.log(sp);
-       this.authenticateService.loginSp(sp).subscribe(err=>{
-        //  this.router.navigateByUrl('/home')
+       this.authenticateService.loginSp(sp).subscribe(data=>{
+        console.log(data.arrData[0]);
+        this.store = data.arrData[0]
+        console.log(this.store.getSp())
+
        })
     }else if(this.type=='customer'){
       let user = {
