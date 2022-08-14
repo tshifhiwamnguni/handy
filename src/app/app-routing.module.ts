@@ -13,6 +13,10 @@ import { ServsComponent } from './client/servs/servs.component';
 import { ActiveComponent } from './client/tabs/active/active.component';
 import { HistoryComponent } from './client/tabs/history/history.component';
 import { PendingComponent } from './client/tabs/pending/pending.component';
+import { ActiveJobsComponent } from './service provider/active-jobs/active-jobs.component';
+import { CompleteJobsComponent } from './service provider/sp tabs/complete-jobs/complete-jobs.component';
+import { JobRequestsComponent } from './service provider/sp tabs/job-requests/job-requests.component';
+import { SpHomeComponent } from './service provider/sp-home/sp-home.component';
 
 
 const routes: Routes = [
@@ -20,15 +24,22 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
+  {path: 'quotations', component: QuotationsComponent},
 
-  
+
+  {path: 'sphome', component: SpHomeComponent, children: [
+    {path: 'activejobs', component: ActiveJobsComponent},
+    {path: 'completejobs', component: CompleteJobsComponent},
+    {path: 'jobsrequests', component: JobRequestsComponent},
+
+  ]},
   {path: 'services', component: ServsComponent, children:[
     {path: 'plumbers' , component: PlumbersComponent},
     {path: 'electricians' , component: ElectriciansComponent},
     {path: 'painters' , component: PaintersComponent},
     {path: 'masons' , component: MasonsComponent},
   ]},
-  {path: 'quotations', component: QuotationsComponent},
+
   {path: 'posts', component: PostsComponent,children:[
     {path: 'active' , component: ActiveComponent},
     {path: 'pending' , component: PendingComponent},
