@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-pending',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PendingComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private requests: RequestService) { }
   ngOnInit(): void {
+    this.getPending()
+  }
+  pending:any
+
+  async getPending() {
+    await this.requests.getPending().subscribe(
+    (data)=>{
+      this.pending =data
+    }
+   )
   }
 
 }

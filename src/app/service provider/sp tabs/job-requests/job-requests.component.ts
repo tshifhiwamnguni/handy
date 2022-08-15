@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobsService } from 'src/app/services/jobs.service';
+import { RequestService } from 'src/app/services/request.service';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-job-requests',
@@ -7,16 +9,23 @@ import { JobsService } from 'src/app/services/jobs.service';
   styleUrls: ['./job-requests.component.scss']
 })
 export class JobRequestsComponent implements OnInit {
-  constructor(private jobs: JobsService) { }
-  ngOnInit(): void {
-    this.getElects()
-  }
-  electticians:any
+  constructor(private req: RequestService, private store: StoreService) { }
 
-  async getElects() {
-    await this.jobs.getElects().subscribe(
+  email:any
+  ngOnInit(): void {
+    this.getPendingId(this.store.currentUser.email)
+    console.log(this.email);
+    
+
+  }
+  jobRequest:any
+
+  async getPendingId(data: any) {
+    await this.req.getPendingId(data).subscribe(
     (data)=>{
-      this.electticians =data
+      this.jobRequest =data
+      console.log(data);
+      
     }
    )
   }

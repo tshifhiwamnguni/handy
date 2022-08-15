@@ -1,0 +1,113 @@
+<div class="px-4 py-5 px-md-5 text-lg-start my-5 col-md-12 col-lg-12 col-sm-12">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-12 col-lg-9 col-xl-7">
+      <div class="card bg-glass px-4 py-5 px-md-5" style="border-radius: 15px">
+        <div class="card-body p-4 p-md-5">
+          <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Request service</h3>
+          <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+            <!-- ======================================================================================= -->
+
+            <div>
+              <div class="row">
+                <div class="form-group col mb-4"> <label for=""> Service provider name</label><h3>{{spdetails.spname}}</h3></div>
+                <div class="form-group col mb-4"> <label for=""> Service provider Email</label><h3>{{spdetails.spemail}}</h3></div>
+            
+              </div>
+              <div class="form-group col mb-4">
+                <label>description</label>
+                <textarea
+                  type="text"
+                  formControlName="description"
+                  class="form-control"
+                  placeholder="enter description"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['description'].errors
+                  }"
+                >
+                </textarea>
+
+                <div
+                  *ngIf="submitted && f['description'].errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f['description'].errors['required']">
+                    description is required
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="row">
+                <div class="form-group col-md-6 mb-4">
+                  <label>Email</label>
+                  <input
+                    type="text"
+                    formControlName="email"
+                    placeholder="email"
+                    class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                  />
+                  <div
+                    *ngIf="submitted && f['email'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['email'].errors['required']">
+                      Email is required
+                    </div>
+                    <div *ngIf="f['email'].errors['required']">
+                      Email is invalid
+                    </div>
+                  </div>
+                </div>
+           
+                <div class="form-group col-md-6 mb-4">
+                  <label>Phone Number</label>
+                  <input
+                    type="text"
+                    formControlName="phonenumber"
+                    placeholder="012-345-6789"
+                    class="form-control"
+                    [ngClass]="{
+                      'is-invalid': submitted && f['phonenumber'].errors
+                    }"
+                  />
+                  <div
+                    *ngIf="submitted && f['phonenumber'].errors"
+                    class="invalid-feedback"
+                  >
+                    <div *ngIf="f['phonenumber'].errors['required']">
+                      Phone Number is required
+                    </div>
+                    <div *ngIf="f['phonenumber'].errors['pattern']">
+                      Phone Number should follow the pattern 999-999-9999
+                    </div>
+                    <div *ngIf="f['phonenumber'].errors['maxlength']">
+                      Phone Number must not exceed 13 character
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button
+                  type="submit"
+                  class="submit btn btn-success btn-block btn-lg"
+                >
+                  REGISTER
+                </button>
+              </div>
+            </div>
+            <!-- ==================================================== -->
+          </form>
+          <div class="form-group mt-3">
+            <P>
+              Already have an account? Click
+              <a routerLink="/login">here</a> to log in
+            </P>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 15px"></div>

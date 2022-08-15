@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { BookComponent } from './client/book/book.component';
 import { HomeComponent } from './client/home/home.component';
 import { ElectriciansComponent } from './client/jobs/electricians/electricians.component';
 import { MasonsComponent } from './client/jobs/masons/masons.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path: 'quotations', component: QuotationsComponent},
+  {path: 'book', component: BookComponent},
 
 
   {path: 'sphome', component: SpHomeComponent, children: [

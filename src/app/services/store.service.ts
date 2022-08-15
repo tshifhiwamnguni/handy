@@ -9,11 +9,10 @@ export class StoreService {
   constructor() { }
 
 
-  sp!:any;
 
-  getSp(): void{
-     this.sp
-  }
+  currentUser!:any;
+  spDetails!:any;
+ 
 
 
 }

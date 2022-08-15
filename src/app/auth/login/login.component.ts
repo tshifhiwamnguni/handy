@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   
   submitted = false;
- 
+   
 
 
   Form = new FormGroup({
@@ -46,6 +46,14 @@ export class LoginComponent implements OnInit {
   get f():{ [key: string]: AbstractControl }{
     return this.Form.controls;
   }
+
+
+  userType: any;
+  myData!: any;
+  fullname: any;
+  email: any;
+  id:any
+
   onSubmit(): void {
    
     this.submitted = true;
@@ -58,8 +66,9 @@ export class LoginComponent implements OnInit {
       console.log(sp);
        this.authenticateService.loginSp(sp).subscribe(data=>{
         console.log(data.arrData[0]);
-        this.store = data.arrData[0]
-        console.log(this.store.getSp())
+        this.store.currentUser =data.arrData[0];
+        this.router.navigateByUrl('/sphome') 
+        
 
        })
     }else if(this.type=='customer'){
@@ -69,7 +78,8 @@ export class LoginComponent implements OnInit {
       };
         console.log(user);
         
-       this.authenticateService.loginUser(user).subscribe(err=>{
+       this.authenticateService.loginUser(user).subscribe(data=>{
+        this.store.currentUser =data.arrData[0];
         this.router.navigateByUrl('/home') 
        })
     }

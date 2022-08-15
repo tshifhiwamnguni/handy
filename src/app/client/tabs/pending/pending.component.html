@@ -8,44 +8,25 @@
         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
       >
         <tr>
-          <th scope="col" class="py-3 px-6">username</th>
-          <th scope="col" class="py-3 px-6">email</th>
-          <th scope="col" class="py-3 px-6">city</th>
+          <th scope="col" class="py-3 px-6">Request id</th>
+          <th scope="col" class="py-3 px-6">description</th>
+          <th scope="col" class="py-3 px-6">service provider Email</th>
   
           <th scope="col" class="py-3 px-6"></th>
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let item of pending">
           <th
             scope="row"
             class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white uppercase"
           >
-            ezekiel
+            {{item.requestid}}
           </th>
-          <td class="py-4 px-6 uppercase">ezekiel@gmail.c9om</td>
-          <td class="py-4 px-6 uppercase">pretoria</td>
+          <td class="py-4 px-6 uppercase">{{item.description}}</td>
+          <td class="py-4 px-6 uppercase">{{item.psemail}}</td>
   
-          <td class="py-4 px-6">
-            <label for="my-modal" class="btn modal-button">view</label>
-          
-            <input type="checkbox" id="my-modal" class="modal-toggle" />
-            <div class="modal">
-              <div class="modal-box">
-                <h3 class="font-bold text-lg">
-                  Congratulations random Internet user!
-                </h3>
-                <p class="py-4">
-                  You've been selected for a chance to get one year of
-                  subscription to use Wikipedia for free!
-                </p>
-                <div class="modal-action">
-                  <label for="my-modal" class="btn">request</label>
-                  <label for="my-modal" class="btn">close</label>
-                </div>
-              </div>
-            </div>
-          </td>
+        
         </tr>
       </tbody>
     </table>
