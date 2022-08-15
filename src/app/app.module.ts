@@ -25,7 +25,9 @@ import { BookComponent } from './client/book/book.component';
 import { DashComponent } from './service provider/dash/dash.component';
 import { ActiveJobsComponent } from './service provider/active-jobs/active-jobs.component';
 import { JobRequestsComponent } from './service provider/sp tabs/job-requests/job-requests.component';
+
 import { CompleteJobsComponent } from './service provider/sp tabs/complete-jobs/complete-jobs.component';
+
 
 
 @NgModule({
@@ -55,9 +57,18 @@ import { CompleteJobsComponent } from './service provider/sp tabs/complete-jobs/
   imports: [
     BrowserModule,
     AppRoutingModule,
+
      ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+    //prime
+   
+   
+
+    FormsModule,
+   
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

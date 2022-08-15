@@ -9,6 +9,6 @@ import { StoreService } from './services/store.service';
 })
 export class AppComponent {
   constructor(private store: StoreService){}
-  currentId = this.store.currentUser.email
+
   title = 'the handyman';
 }

@@ -5,10 +5,18 @@ import { AuthService } from 'src/app/services/auth.service';
 import { StoreService } from 'src/app/services/store.service';
 
 
+
+
+
+
+
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers: []
 })
 export class LoginComponent implements OnInit {
   ngOnInit(): void {
@@ -31,7 +39,9 @@ export class LoginComponent implements OnInit {
     private authenticateService: AuthService,
     private router:Router,
     private store : StoreService,
-    private activeRoute:ActivatedRoute,) { }
+    private activeRoute:ActivatedRoute,
+  
+   ) { }
 
   
   submitted = false;
@@ -68,9 +78,11 @@ export class LoginComponent implements OnInit {
         console.log(data.arrData[0]);
         this.store.currentUser =data.arrData[0];
         this.router.navigateByUrl('/sphome') 
-        
-
-       })
+       },
+        (err) =>{
+         
+        }
+      )
     }else if(this.type=='customer'){
       let user = {
         email: this.Form.value.email,
@@ -81,7 +93,11 @@ export class LoginComponent implements OnInit {
        this.authenticateService.loginUser(user).subscribe(data=>{
         this.store.currentUser =data.arrData[0];
         this.router.navigateByUrl('/home') 
+       },
+       (err) =>{
+          
        })
+      
     }
    
   }  
@@ -91,5 +107,9 @@ export class LoginComponent implements OnInit {
     console.log(e.target.value);
     
   }
+
+
+
+
  
 }
