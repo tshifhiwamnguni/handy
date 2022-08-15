@@ -28,6 +28,31 @@
           <td class="py-4 px-6 uppercase">{{item.description}}</td>
 
           <td class="py-4 px-6 uppercase">{{item.requestid}}</td>
+          <td class="py-4 px-6">
+            <label for="my-modal" class="btn modal-button" (click)="set(i)">view</label>
+          
+            <input type="checkbox" id="my-modal" class="modal-toggle" />
+            <div class="modal">
+              <div class="modal-box">
+                <h3 class="font-bold text-lg">
+                  Request ID1: #{{jobRequest[ind].requestid}}
+                </h3>
+                <p class="py-4">
+                  name: {{jobRequest[ind].useremail}}<br>
+                  description: {{jobRequest[ind].description}}  <br>
+                  phone number: {{jobRequest[ind].phonenumber}}  <br>
+                 
+              
+                  
+                </p>
+                <div class="modal-action">
+                  <label for="my-modal" class="btn" (click)="accept(jobRequest[ind].requestid)">accept</label>
+                  <label for="my-modal" class="btn" (click)="reject(jobRequest[ind].requestid)">reject</label>
+                  <label for="my-modal" class="btn">close</label>
+                </div>
+              </div>
+            </div>
+          </td>
   
         </tr>
       </tbody>

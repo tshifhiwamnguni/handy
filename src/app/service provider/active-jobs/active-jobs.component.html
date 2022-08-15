@@ -8,24 +8,27 @@
         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
       >
         <tr>
-          <th scope="col" class="py-3 px-6">username</th>
-          <th scope="col" class="py-3 px-6">email</th>
-          <th scope="col" class="py-3 px-6">city</th>
+          <th scope="col" class="py-3 px-6">client email</th>
+          <th scope="col" class="py-3 px-6">phone number</th>
+          <th scope="col" class="py-3 px-6">description</th>
+          <th scope="col" class="py-3 px-6">Request Id</th>
+  
   
           <th scope="col" class="py-3 px-6"></th>
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let item of electticians; let i = index">
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let item of activeJObss; let i = index">
           <th
             scope="row"
             class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white uppercase"
           >
-            {{item.firstname}}
+            {{item.useremail}}
           </th>
-          <td class="py-4 px-6 uppercase">{{item.email}}</td>
-          <td class="py-4 px-6 uppercase">{{item.city}}</td>
-  
+          <td class="py-4 px-6 uppercase">{{item.phonenumber}}</td>
+          <td class="py-4 px-6 uppercase">{{item.description}}</td>
+
+          <td class="py-4 px-6 uppercase">{{item.requestid}}</td>
           <td class="py-4 px-6">
             <label for="my-modal" class="btn modal-button" (click)="set(i)">view</label>
           
@@ -36,16 +39,14 @@
                   ezekiel
                 </h3>
                 <p class="py-4">
-                  name: {{electticians[ind].firstname}} <br>
-                  email: {{electticians[ind].email}}  <br>
-                  spexialization: {{electticians[ind].jobtype}}  <br>
-                  city: {{electticians[ind].city}}  <br>
-                  average rates: {{electticians[ind].avgrate}} 
-              
+                  name: {{activeJObss[ind].useremail}}<br>
+                  description: {{activeJObss[ind].description}}  <br>
+                  phone number: {{activeJObss[ind].phonenumber}}  <br>
+                 
                   
                 </p>
                 <div class="modal-action">
-                  <label for="my-modal" class="btn">request</label>
+                  <label for="my-modal" class="btn" (click)="finish(activeJObss[ind].requestid)">finish</label>
                   <label for="my-modal" class="btn">close</label>
                 </div>
               </div>

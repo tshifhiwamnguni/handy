@@ -22,4 +22,13 @@ export class PendingComponent implements OnInit {
    )
   }
 
+  delete(id: any){
+    this.requests.deleteRequests(id).subscribe(
+      (data)=>{
+        console.log(data);
+        
+      }
+     )
+  }
+
 }

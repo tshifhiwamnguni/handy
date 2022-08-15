@@ -33,4 +33,21 @@ export class JobRequestsComponent implements OnInit {
   set(i:any){
     this.ind = i
   }
+
+  accept(requestid:any){
+    let status = { status: 'active'}
+
+    this.req.updateRequest(status,requestid).subscribe(err=>{
+      console.log(err);
+      
+    })
+  }
+
+  reject(requestid:any){
+    let status = { status: 'rejected'}
+    this.req.updateRequest(status,requestid).subscribe(err=>{
+      console.log(err);
+      
+    })
+  }
 }

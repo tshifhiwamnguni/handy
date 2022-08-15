@@ -24,9 +24,18 @@ export class RequestService {
   getActive(): Observable<any> { 
     return this.http.get(`${baseURL}/getactive`);
   }
+  getComplete(): Observable<any> { 
+    return this.http.get(`${baseURL}/getcomplete`);
+  }
 
   getPendingId(data:any): Observable<any> { 
     return this.http.get(`${baseURL}/getpending/`+data);
+  }
+  updateRequest(data: any, requestid:any){
+    return this.http.put(`${baseURL}/updaterequest/`+requestid,data);
+  }
+  deleteRequests( requestid:any){
+    return this.http.delete(`${baseURL}/deleterequest/`+requestid);
   }
 
 }

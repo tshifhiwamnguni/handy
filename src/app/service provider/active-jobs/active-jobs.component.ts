@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobsService } from 'src/app/services/jobs.service';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-active-jobs',
@@ -8,16 +9,16 @@ import { JobsService } from 'src/app/services/jobs.service';
 })
 export class ActiveJobsComponent implements OnInit {
 
-  constructor(private jobs: JobsService) { }
+  constructor(private jobs: JobsService, public req: RequestService) { }
   ngOnInit(): void {
-    this.getElects()
+    this.getactiveJObs()
   }
-  electticians:any
+  activeJObss:any
 
-  async getElects() {
-    await this.jobs.getElects().subscribe(
+  async getactiveJObs() {
+    await this.req.getActive().subscribe(
     (data)=>{
-      this.electticians =data
+      this.activeJObss =data
     }
    )
   }
@@ -25,5 +26,17 @@ export class ActiveJobsComponent implements OnInit {
   ind= 0 
   set(i:any){
     this.ind = i
+  }
+
+
+
+  finish(requestid:any){
+    let status = {
+      status: 'complete'
+    }
+    this.req.updateRequest(status,requestid).subscribe(err=>{
+      console.log(err);
+      
+    })
   }
 }
