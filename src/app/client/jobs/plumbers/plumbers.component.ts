@@ -30,6 +30,7 @@ async getplumbers() {
   await this.jobs.getPlumber().subscribe(
   (data)=>{
     this.plumbers =data
+    console.table(data)
   }
  )
 }

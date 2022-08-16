@@ -20,13 +20,14 @@ import { SpHomeComponent } from './service provider/sp-home/sp-home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+// import { HttpClientModule } from '@angular/common/http';
 import { BookComponent } from './client/book/book.component';
 import { DashComponent } from './service provider/dash/dash.component';
 import { ActiveJobsComponent } from './service provider/active-jobs/active-jobs.component';
 import { JobRequestsComponent } from './service provider/sp tabs/job-requests/job-requests.component';
 
 import { CompleteJobsComponent } from './service provider/sp tabs/complete-jobs/complete-jobs.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
