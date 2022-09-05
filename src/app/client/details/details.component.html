@@ -1,0 +1,127 @@
+<div class=" px-4 py-5 px-md-5 text-lg-start my-5 col-md-12 col-lg-12 col-sm-12">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg-9 col-xl-7">
+            <div class="card bg-glass px-4 py-5 px-md-5 background" style="border-radius: 15px">
+                <div class="card-body p-4 p-md-5">
+                    <H1>Kon<span class="orange">trak</span></H1>
+                    <br>
+                    <h2 class="cen"> Enter job details</h2>
+                    <br>
+                    <form [formGroup]="Form" (ngSubmit)="onSubmit()">
+                        <div>
+                            <div class="form-group col mb-4">
+                                
+                                <select formControlName="jobtype" class="form-control" placeholder="Select joob"
+                                    [ngClass]="{
+							  'is-invalid': submitted && f['jobtype'].errors
+							}">
+                                    <option value disabled selected hidden>Select job...</option>
+                                    <option value="plumber">plumber</option>
+                                    <option value="mason">mason</option>
+                                    <option value="electrician">electrician</option>
+                                    <option value="painter">painter</option>
+                                </select>
+                                <div *ngIf="submitted && f['jobtype'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['jobtype'].errors['required']">
+                                        jpb is required
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group col mb-4">
+                                
+                                
+                                <select formControlName="city" class="form-control" placeholder="Select sub-category" [ngClass]="{
+							'is-invalid': submitted && f['city'].errors
+						  }">
+                                    <option value disabled selected hidden>Select city...</option>
+                                    <option value="Pretoria">soshanguve</option>
+                                    <option value="vorslorus">vorslorus</option>
+                                    <option value="soweto">soweto</option>
+                                    <option value="roodepoord">roodepoord</option>
+                                </select>
+                                <div *ngIf="submitted && f['city'].errors" class="invalid-feedback">
+                                    <div *ngIf="f['city'].errors['required']">
+                                        city is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group  mb-4">
+                                  
+                                    <input type="text" formControlName="firstname" placeholder="Pretoria"
+                                        class="form-control" [ngClass]="{
+							  'is-invalid': submitted && f['firstname'].errors
+							}" />
+                                    <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['firstname'].errors['required']">
+                                            First name is required
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div>
+                            
+                                <div class="form-group ">
+
+
+                                    <label for="message"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Enter
+                                        detail;s</label>
+                                    <textarea id="message" rows="4"
+                                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        placeholder="Your message..."></textarea>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+
+
+                                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                        for="multiple_files">Upload multiple files</label>
+                                    <input
+                                        class="block w-full text-sm text-gray-900 bg-gray-50  rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                        id="multiple_files" type="file" multiple="">
+
+
+                                </div>
+
+                                <br>
+                                <div class="form-group">
+
+                                    <div class="relative">
+                                        <div
+                                            class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                                          
+                                         
+                                            
+                                        </div>
+                                        <input datepicker="" datepicker-autohide="" type="date"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 datepicker-input"
+                                            placeholder="Select date">
+                                    </div>
+
+                                </div>
+                                <br>
+
+                            </div>
+                            <div class="form-group cen">
+                                <button type="submit" class="submit bt-orange btn-block btn-lg">
+									submit
+								</button>
+
+                            </div>
+                        </div>
+
+                    </form>
+             
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

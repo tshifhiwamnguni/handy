@@ -28,8 +28,9 @@ import { JobRequestsComponent } from './service provider/sp tabs/job-requests/jo
 
 import { CompleteJobsComponent } from './service provider/sp tabs/complete-jobs/complete-jobs.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { ToastrModule } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
+import { DetailsComponent } from './client/details/details.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashComponent,
     ActiveJobsComponent,
     JobRequestsComponent,
-    CompleteJobsComponent
+    CompleteJobsComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +64,7 @@ import { HttpClientModule } from '@angular/common/http';
      ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
 
     //prime
    

@@ -4,7 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { StoreService } from 'src/app/services/store.service';
 
-
+import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 
 
@@ -40,6 +41,7 @@ export class LoginComponent implements OnInit {
     private router:Router,
     private store : StoreService,
     private activeRoute:ActivatedRoute,
+    private toastr: ToastrService
   
    ) { }
 
@@ -80,7 +82,11 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/sphome') 
        },
         (err) =>{
-         
+          Swal.fire(
+            'Login success',
+            'Registration successull. You may proceed with login'
+          );
+    
         }
       )
     }else if(this.type=='customer'){
@@ -95,7 +101,12 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/home') 
        },
        (err) =>{
+        Swal.fire(
+          'Login failed',
+          `${err.error.message}`
           
+        );
+  
        })
       
     }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { BookComponent } from './client/book/book.component';
+import { DetailsComponent } from './client/details/details.component';
 import { HomeComponent } from './client/home/home.component';
 import { ElectriciansComponent } from './client/jobs/electricians/electricians.component';
 import { MasonsComponent } from './client/jobs/masons/masons.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path: 'quotations', component: QuotationsComponent},
   {path: 'book', component: BookComponent},
+{path: 'details', component: DetailsComponent},
 
 
   {path: 'sphome', component: SpHomeComponent, children: [

@@ -1,34 +1,39 @@
 
-<div class="background">
+<div class="">
     <div style="height: 1px;"></div>
     <div class="container px-4 py-5 px-md-5 text-lg-start my-5 col-md-12 col-lg-12 col-sm-12">
         <div class="row justify-content-center align-items-center ">
             <div class="col col-md -12 col-xl-7 justify-items-center">
-                <div class="card bg-glass px-4 py-5 px-md-5 w-10xl     " style="border-radius: 15px;">
+                <div class="card bg-glass px-4 py-5 px-md-5 w-10xl    background " style="border-radius: 15px;">
                   
-                    <form [formGroup]="Form" (ngSubmit)="onSubmit()" c>
-                        <div class="row">
+                    <form [formGroup]="Form" (ngSubmit)="onSubmit()" >
+                                <H1>Kon<span class="orange">trak</span></H1>
+                                <br> 
+                                <h3 class="cen"> Login</h3>
+                                <br>
+                        <div class="flex justify-between">
 
-							<div class="form-check col">
-								<input class="form-check-input" type="radio" name="1" id="flexRadioDefault2"
+							<div class="form-check ">
+								<input class="form-check-input orange" type="radio" name="1" id="flexRadioDefault2"
 									value="customer" checked (change)="select($event)" />
 								<label class="form-check-label" for="flexRadioDefault2">
-										customer
+										client
 								</label>
 							</div>
-							<div class="form-check col">
-								<input class="form-check-input" type="radio" name=1 id="flexRadioDefault2"
+							<div class="form-check ">
+								<input class="form-check-inpu orange" type="radio" name=1 id="flexRadioDefault2"
 									value="handyman"  (change)="select($event)" />
-									<label class="form-check-label" for="flexRadioDefault2">
-										handyman
+									<label class="form-check-label mgr" for="flexRadioDefault2">
+										Contractor
 								</label>
 							</div>
 
 
 						</div>
                         <div class="form-group col mb-4 lg:  ">
-                            <label>Email </label>
+                      
                             <input type="text" formControlName="email" placeholder="Email" class="form-control "
+                            style="margin-top: 9px;"
                                 [ngClass]="{ 'is-invalid':submitted && f['email'].errors }" />
                             <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
                                 <div *ngIf="f['email'].errors['required']">Email is required</div>
@@ -36,7 +41,7 @@
                             </div>
                         </div>
                         <div class="form-group col mb-4 ">
-                            <label>Password</label>
+                           
                             <input type="password" formControlName="password" placeholder="Password"
                                 class="form-control" [ngClass]="{ 'is-invalid':submitted && f['password'].errors }" />
                             <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
@@ -51,13 +56,18 @@
                             <div class="col">
                             </div>
                         </div>
-                        <div class="form-group mt-3">
-                            <button type="submit" class="submit btn btn-success btn-block btn-lg">Login</button>
+                        <div class="form-group mt-3"
+                        style="text-align: center;"
+                        >
+                            <button type="submit" class="submit   btn-block btn-lg bt-orange
+                            "
+                          
+                            >Login</button>
                         </div>
                     </form>
 
                     <div class="form-group ">
-                        <p>Not a member? <a routerLink='/register'>Register</a></p>
+                        <p>Not a member? <a class="orange" routerLink='/register'>Register</a></p>
                     </div>
                 </div>
             </div>
