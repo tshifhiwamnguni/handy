@@ -31,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ToastrService } from 'ngx-toastr';
 import { DetailsComponent } from './client/details/details.component';
+import { ContractorsComponent } from './client/contractors/contractors.component';
+import { TrackerComponent } from './tracker/tracker.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { DetailsComponent } from './client/details/details.component';
     ActiveJobsComponent,
     JobRequestsComponent,
     CompleteJobsComponent,
-    DetailsComponent
+    DetailsComponent,
+    ContractorsComponent,
+    TrackerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,59 @@
+.todo{
+    background-color: #EFAC48B2;
+    width: 300px;
+    padding: 40px;
+
+}
+.done{
+    background-color: #EFAC48B2;
+    width: 300px;
+    margin-left: 10px;
+}
+
+.btn2{
+
+width: 131px;
+height: 27px;
+
+
+background: #EFAC48;
+border-radius: 5px;
+}
+
+.card2{
+    width: 200px;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+ 
+
+}
+.bt-orange{
+    width: 200px;
+   height: 20px;
+
+
+background: #EFAC48;
+border-radius: 5px;
+
+margin: 20px;
+}
+
+@media screen and (min-width: 375px)and (max-width:768px) {
+    .todo {
+      width: 180px;
+    }
+    .done{
+        width: 180px;
+    }
+    .bt-orange{
+        width: 100px;
+        height: 10px;
+        background: #EFAC48;
+        border-radius: 5px;
+        font-size: 3;
+        margin: 20px;
+    }
+  }

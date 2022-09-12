@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { BookComponent } from './client/book/book.component';
+import { ContractorsComponent } from './client/contractors/contractors.component';
 import { DetailsComponent } from './client/details/details.component';
 import { HomeComponent } from './client/home/home.component';
 import { ElectriciansComponent } from './client/jobs/electricians/electricians.component';
@@ -19,6 +20,7 @@ import { ActiveJobsComponent } from './service provider/active-jobs/active-jobs.
 import { CompleteJobsComponent } from './service provider/sp tabs/complete-jobs/complete-jobs.component';
 import { JobRequestsComponent } from './service provider/sp tabs/job-requests/job-requests.component';
 import { SpHomeComponent } from './service provider/sp-home/sp-home.component';
+import { TrackerComponent } from './tracker/tracker.component';
 
 
 const routes: Routes = [
@@ -29,7 +31,8 @@ const routes: Routes = [
   {path: 'quotations', component: QuotationsComponent},
   {path: 'book', component: BookComponent},
 {path: 'details', component: DetailsComponent},
-
+{path: 'track', component: TrackerComponent},
+{path: 'contractors', component: ContractorsComponent},
 
   {path: 'sphome', component: SpHomeComponent, children: [
     {path: 'activejobs', component: ActiveJobsComponent},
